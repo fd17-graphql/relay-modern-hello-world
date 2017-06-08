@@ -6,7 +6,7 @@ import {
 } from 'react-relay';
 
 import environment from './createRelayEnvironment';
-import Feed from './Feed';
+// import Feed from './Feed';
 
 class App extends Component {
   render() {
@@ -17,9 +17,13 @@ class App extends Component {
           environment={environment}
 
           query={graphql`
-            query AppFeedQuery {
-              feed (type: NEW, limit: 5) {
-                ...Feed
+            query AppQuery{
+              partners {
+                partnerNumber
+                firstname
+                lastname
+                birthday
+                sex
               }
             }
           `}
@@ -28,8 +32,9 @@ class App extends Component {
             if (error) {
               return <div>{error.message}</div>;
             } else if (props) {
-              console.log(props.feed);
-              return <Feed data={props.feed} />;
+              console.log('success');
+              return <div>success</div>;
+              // return <Feed data={props.feed} />;
             }
             return <div>Loading</div>;
           }}

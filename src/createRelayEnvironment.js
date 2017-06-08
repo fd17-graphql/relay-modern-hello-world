@@ -7,13 +7,17 @@ const {
 
 // Define a function that fetches the results of an operation (query/mutation/etc)
 // and returns its results as a Promise:
+
+
+// 'https://fd17-apollo-server-mikhailbro.c9users.io/graphql'
+
 function fetchQuery(
   operation,
   variables,
   cacheConfig,
   uploadables,
 ) {
-  return fetch('http://api.githunt.com/graphql', {
+  return fetch('https://d17-apollo-server-phil-schneider.c9users.io/graphql', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

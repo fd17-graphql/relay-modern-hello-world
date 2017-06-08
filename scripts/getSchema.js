@@ -1,15 +1,14 @@
 var fetch = require('node-fetch');
 var fs = require('fs');
 
-const {
-  buildClientSchema,
-  introspectionQuery,
-  printSchema,
-} = require('graphql/utilities');
+var utilities =  require('graphql/utilities');
+var buildClientSchema = utilities.buildClientSchema;
+var introspectionQuery = utilities.introspectionQuery;
+var printSchema = utilities.printSchema;
 
 console.log(introspectionQuery);
 
-fetch('http://api.githunt.com/graphql', {
+fetch('https://d17-apollo-server-phil-schneider.c9users.io/graphql', {
   method: 'POST',
   headers: {
     'Accept': 'application/json',
