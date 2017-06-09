@@ -10,6 +10,14 @@ This example was prepared as part of an [in-depth blog post about Relay Modern](
 yarn
 yarn start
 ```
+## Changing endpoint url
+```
+#change file
+src/createRelayEnvironment.js
+#change line 20
+return fetch('https://d17-apollo-server-phil-schneider.c9users.io/graphql',
+```
+
 
 If you edit the query code, run the Relay Compiler:
 
