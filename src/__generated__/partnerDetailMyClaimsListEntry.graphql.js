@@ -3,7 +3,7 @@
  *   relay-compiler
  *
  * @providesModule partnerDetailMyClaimsListEntry.graphql
- * @generated SignedSource<<c103d189a68dcaa18a5f484b50f8eba3>>
+ * @generated SignedSource<<438f582286976e260cf6bded0d3f40e3>>
  * @flow
  * @nogrep
  */
@@ -20,6 +20,11 @@ export type partnerDetailMyClaimsListEntry = {|
   +claimsSum: number;
   +claimsDate: string;
   +state: "clearing" | "closed" | "reported";
+  +causer: ?{|
+    +partnerNumber: ?number;
+    +firstname: string;
+    +lastname: string;
+  |};
 |};
 */
 
@@ -63,6 +68,38 @@ const fragment /*: ConcreteFragment*/ = {
       "alias": null,
       "args": null,
       "name": "state",
+      "storageKey": null
+    },
+    {
+      "kind": "LinkedField",
+      "alias": null,
+      "args": null,
+      "concreteType": "Partner",
+      "name": "causer",
+      "plural": false,
+      "selections": [
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "args": null,
+          "name": "partnerNumber",
+          "storageKey": null
+        },
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "args": null,
+          "name": "firstname",
+          "storageKey": null
+        },
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "args": null,
+          "name": "lastname",
+          "storageKey": null
+        }
+      ],
       "storageKey": null
     }
   ],

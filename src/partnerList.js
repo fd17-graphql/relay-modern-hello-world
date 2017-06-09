@@ -9,12 +9,14 @@ import PartnerListEntry from './partnerListEntry';
 
 class PartnerList extends React.Component {
   render() {
+      console.log("claims", this.props.claims);
+
     return <QueryRenderer
       environment={environment}
-
+      variables={{claimGreaterThan: this.props.claims}}
       query={graphql`
-              query partnerListQuery{
-                partners {
+              query partnerListQuery ($claimGreaterThan: Int!){
+                partnerWithClaimGreaterThan (value: $claimGreaterThan) {
                   partnerNumber
                   ...partnerListEntry
                  }
@@ -25,8 +27,9 @@ class PartnerList extends React.Component {
         if (error) {
           return <div>{error.message}</div>;
         } else if (props) {
+            console.log ("props", props.partnerWithClaimGreaterThan);
           return <ol>
-              {props.partners.map((partner, index) => (
+              {props.partnerWithClaimGreaterThan.map((partner, index) => (
                 <li key={partner.partnerNumber} onClick={() => {
                   this.props.onClick(partner.partnerNumber)
                 }}>

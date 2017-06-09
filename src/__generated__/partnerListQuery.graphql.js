@@ -3,8 +3,8 @@
  *   relay-compiler
  *
  * @providesModule partnerListQuery.graphql
- * @generated SignedSource<<5e299a16029b843db92fe5a9f7f24706>>
- * @relayHash 65457cb44cec31dabc28adc70ec84f34
+ * @generated SignedSource<<548ef45ff84384bc551b841b99ca9089>>
+ * @relayHash f9ecaed50e6867c6da53efdd8741add0
  * @flow
  * @nogrep
  */
@@ -20,8 +20,10 @@ import type {ConcreteBatch} from 'relay-runtime';
 
 
 /*
-query partnerListQuery {
-  partners {
+query partnerListQuery(
+  $claimGreaterThan: Int!
+) {
+  partnerWithClaimGreaterThan(value: $claimGreaterThan) {
     partnerNumber
     ...partnerListEntry
   }
@@ -39,7 +41,14 @@ fragment partnerListEntry on Partner {
 
 const batch /*: ConcreteBatch*/ = {
   "fragment": {
-    "argumentDefinitions": [],
+    "argumentDefinitions": [
+      {
+        "kind": "LocalArgument",
+        "name": "claimGreaterThan",
+        "type": "Int!",
+        "defaultValue": null
+      }
+    ],
     "kind": "Fragment",
     "metadata": null,
     "name": "partnerListQuery",
@@ -47,9 +56,16 @@ const batch /*: ConcreteBatch*/ = {
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": null,
+        "args": [
+          {
+            "kind": "Variable",
+            "name": "value",
+            "variableName": "claimGreaterThan",
+            "type": "Int!"
+          }
+        ],
         "concreteType": "Partner",
-        "name": "partners",
+        "name": "partnerWithClaimGreaterThan",
         "plural": true,
         "selections": [
           {
@@ -75,7 +91,14 @@ const batch /*: ConcreteBatch*/ = {
   "metadata": {},
   "name": "partnerListQuery",
   "query": {
-    "argumentDefinitions": [],
+    "argumentDefinitions": [
+      {
+        "kind": "LocalArgument",
+        "name": "claimGreaterThan",
+        "type": "Int!",
+        "defaultValue": null
+      }
+    ],
     "kind": "Root",
     "name": "partnerListQuery",
     "operation": "query",
@@ -83,9 +106,16 @@ const batch /*: ConcreteBatch*/ = {
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": null,
+        "args": [
+          {
+            "kind": "Variable",
+            "name": "value",
+            "variableName": "claimGreaterThan",
+            "type": "Int!"
+          }
+        ],
         "concreteType": "Partner",
-        "name": "partners",
+        "name": "partnerWithClaimGreaterThan",
         "plural": true,
         "selections": [
           {
@@ -138,7 +168,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query partnerListQuery {\n  partners {\n    partnerNumber\n    ...partnerListEntry\n  }\n}\n\nfragment partnerListEntry on Partner {\n  partnerNumber\n  firstname\n  lastname\n  myClaims {\n    claimsSum\n  }\n}\n"
+  "text": "query partnerListQuery(\n  $claimGreaterThan: Int!\n) {\n  partnerWithClaimGreaterThan(value: $claimGreaterThan) {\n    partnerNumber\n    ...partnerListEntry\n  }\n}\n\nfragment partnerListEntry on Partner {\n  partnerNumber\n  firstname\n  lastname\n  myClaims {\n    claimsSum\n  }\n}\n"
 };
 
 module.exports = batch;

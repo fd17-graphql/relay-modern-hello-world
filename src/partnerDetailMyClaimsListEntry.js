@@ -12,6 +12,7 @@ const PartnerDetailMyClaimsListEntry = createFragmentContainer(
             <td>{currencyFormatter.format(data.claimsSum, { code: 'CHF' })}</td>
             <td>{data.claimsDate}</td>
             <td>{data.state}</td>
+            <td>{data.causer.firstname} {data.causer.lastname} {data.causer.partnerNumber}</td>
         </tr>
     ),
     graphql`
@@ -22,6 +23,11 @@ const PartnerDetailMyClaimsListEntry = createFragmentContainer(
                             claimsSum
                             claimsDate
                             state
+                            causer {
+                                  partnerNumber
+                                  firstname
+                                  lastname
+                            }
                         }
                 
             `

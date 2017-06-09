@@ -3,7 +3,7 @@
  *   relay-compiler
  *
  * @providesModule partnerDetailMyClaimsList.graphql
- * @generated SignedSource<<ada2975b57ea937ef3467827420c34ab>>
+ * @generated SignedSource<<1e089e01b57df16103c761d62d070bb1>>
  * @flow
  * @nogrep
  */
@@ -15,10 +15,7 @@
 /*::
 import type {ConcreteFragment} from 'relay-runtime';
 export type partnerDetailMyClaimsList = {|
-  +partnerNumber: ?number;
-  +myClaims: ?$ReadOnlyArray<?{|
-    +claimsNumber: ?number;
-  |}>;
+  +claimsNumber: ?number;
 |};
 */
 
@@ -26,41 +23,25 @@ export type partnerDetailMyClaimsList = {|
 const fragment /*: ConcreteFragment*/ = {
   "argumentDefinitions": [],
   "kind": "Fragment",
-  "metadata": null,
+  "metadata": {
+    "plural": true
+  },
   "name": "partnerDetailMyClaimsList",
   "selections": [
     {
       "kind": "ScalarField",
       "alias": null,
       "args": null,
-      "name": "partnerNumber",
+      "name": "claimsNumber",
       "storageKey": null
     },
     {
-      "kind": "LinkedField",
-      "alias": null,
-      "args": null,
-      "concreteType": "Claims",
-      "name": "myClaims",
-      "plural": true,
-      "selections": [
-        {
-          "kind": "ScalarField",
-          "alias": null,
-          "args": null,
-          "name": "claimsNumber",
-          "storageKey": null
-        },
-        {
-          "kind": "FragmentSpread",
-          "name": "partnerDetailMyClaimsListEntry",
-          "args": null
-        }
-      ],
-      "storageKey": null
+      "kind": "FragmentSpread",
+      "name": "partnerDetailMyClaimsListEntry",
+      "args": null
     }
   ],
-  "type": "Partner"
+  "type": "Claims"
 };
 
 module.exports = fragment;

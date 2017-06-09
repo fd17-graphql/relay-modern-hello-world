@@ -25,7 +25,12 @@ class PartnerDetail extends React.Component {
                   lastname
                   birthday                                                                          
                   sex
-                  ...partnerDetailMyClaimsList
+                  myClaims {
+                    ...partnerDetailMyClaimsList
+                  }
+                   claimsCausedByMe {
+                    ...partnerDetailMyClaimsList
+                  }
                 }
               }
             `}
@@ -41,7 +46,10 @@ class PartnerDetail extends React.Component {
                 Nachname: {props.partner.lastname}<br/>
                 Geburtsdatum: {props.partner.birthday}<br/>
               <h3>Schadensliste</h3>
-              <PartnerDetailMyClaimsList data={props.partner}/>
+              <PartnerDetailMyClaimsList data={props.partner.myClaims}/>
+
+              <h3>Meine Schadensliste</h3>
+              <PartnerDetailMyClaimsList data={props.partner.claimsCausedByMe}/>
           </div>;
         }
         return <div>Loading</div>;
