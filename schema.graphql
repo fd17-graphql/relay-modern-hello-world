@@ -23,6 +23,7 @@ enum ContractState {
   closed
   reported
 }
+
 type Partner {
   partnerNumber: Int
   firstname: String!
