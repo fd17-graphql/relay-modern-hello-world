@@ -9,14 +9,15 @@ import PartnerDetailMyClaimsListEntry from './partnerDetailMyClaimsListEntry'
  */
 const PartnerDetailMyClaimsList = createFragmentContainer(
     ({data}) => (
-        console.log("data",data),
-        <table>
+      <div className="row">
+        <div className="col-xs-12">
+          <table className="table table-striped">
             <thead>
             <tr>
                 <th>#</th>
                 <th>Description</th>
                 <th>Sum</th>
-                <th>Date</th>                 
+                <th>Date</th>
                 <th>State</th>
                 <th>Verursacher</th>
             </tr>
@@ -27,6 +28,8 @@ const PartnerDetailMyClaimsList = createFragmentContainer(
                 ))}
             </tbody>
         </table>
+        </div>
+      </div>
     ),
     graphql`
                 fragment partnerDetailMyClaimsList on Claims @relay(plural: true){

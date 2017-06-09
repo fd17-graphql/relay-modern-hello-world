@@ -1,6 +1,11 @@
-ol {
+tr.selected, .table-striped tbody tr:nth-of-type(odd).selected{
+  background: #C9D8FF;
+}
+table.table {
   display: block;
-  height: 200px;
+  height: 300px;
+  width: 100%;
   overflow-y: scroll;
-  border: solid 1px black;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
 }
