@@ -1,5 +1,4 @@
 import React from 'react';
-import dateFormat from 'dateformat';
 import environment from './createRelayEnvironment';
 
 import {
@@ -34,7 +33,7 @@ class PartnerDetail extends React.Component {
         } else if (props) {
           console.log(props.partners[0]);
           return <div>
-            {props.partners[0].firstname} {props.partners[0].lastname} {dateFormat(props.partners[0].birthday, "dd.mm.yyyy")}
+            {props.partners[0].firstname} {props.partners[0].lastname} {props.partners[0].birthday}
           </div>;
         }
         return <div>Loading</div>;
