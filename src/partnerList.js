@@ -25,15 +25,24 @@ class PartnerList extends React.Component {
         if (error) {
           return <div>{error.message}</div>;
         } else if (props) {
-          return <ol>
-              {props.partners.map((partner, index) => (
-                <li key={partner.partnerNumber} onClick={() => {
-                  this.props.onClick(partner.partnerNumber)
-                }}>
-                  <PartnerListEntry data={partner}/>
-                </li>
-              ))}
-            </ol>
+          return <div className="row">
+              <div className="col-xs-12">
+                <table className="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Claims Sum</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {props.partners.map((partner, index) => (
+                        <PartnerListEntry data={partner} key={partner.partnerNumber} selectedPartnerNumber={this.props.selectedPartnerNumber} onClick={this.props.onClick}/>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
         }
         return <div>Loading</div>;
       }}

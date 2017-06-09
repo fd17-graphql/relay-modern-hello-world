@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 
-import {
-  graphql
-} from 'react-relay';
-
 import PartnerList from './partnerList';
 import PartnerDetail from './partnerDetail';
 
@@ -23,11 +19,12 @@ class App extends Component {
     })
 
   }
+
   render() {
     return (
-      <div className="App">
-        <h2>FocusDays GraphQL Demo</h2>
-          <PartnerList onClick={this.setPartner.bind(this)} />
+      <div className="App container">
+        <h4>List of Partners</h4>
+          <PartnerList onClick={this.setPartner.bind(this)} selectedPartnerNumber={this.state.partnerNumber} />
           <PartnerDetail partnerNumber={this.state.partnerNumber} />
       </div>
     ); // render

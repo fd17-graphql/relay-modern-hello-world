@@ -35,7 +35,7 @@ class PartnerDetail extends React.Component {
           return <div>{error.message}</div>;
         } else if (props) {
           return <div>
-            {props.partner.firstname} {props.partner.lastname} {props.partner.birthday}
+            <h4>{props.partner.firstname} {props.partner.lastname} ({props.partner.sex}, {props.partner.birthday})</h4>
             <PartnerDetailMyClaimsList data={props.partner}/>
           </div>;
         }

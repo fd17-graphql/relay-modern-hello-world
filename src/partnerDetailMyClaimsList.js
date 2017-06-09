@@ -9,7 +9,9 @@ import PartnerDetailMyClaimsListEntry from './partnerDetailMyClaimsListEntry'
  */
 const PartnerDetailMyClaimsList = createFragmentContainer(
     ({data}) => (
-        <table>
+      <div className="row">
+        <div className="col-xs-12">
+          <table className="table table-striped">
             <thead>
             <tr>
                 <th>#</th>
@@ -26,6 +28,8 @@ const PartnerDetailMyClaimsList = createFragmentContainer(
                 ))}
             </tbody>
         </table>
+        </div>
+      </div>
     ),
     graphql`
                 fragment partnerDetailMyClaimsList on Partner {
