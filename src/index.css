@@ -9,3 +9,10 @@ table.table.fixed {
   border-bottom: 1px solid;
   border-top: 1px solid;
 }
+
+input {
+  text-align: right;
+}
+input[type=number]{
+  width: 100px;
+}

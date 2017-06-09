@@ -28,7 +28,7 @@ class NameForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     min. claims sum:
-                    <input size="5" type="text" value={this.state.value} onChange={this.handleChange} />
+                    <input type="number" min="1" max="1000000" value={this.state.value} onChange={this.handleChange} />
                 </label>
             </form>
         );
