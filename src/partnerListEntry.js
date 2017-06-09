@@ -1,5 +1,5 @@
 import React from 'react';
-import dateFormat from 'dateformat';
+import currencyFormatter from 'currency-formatter';
 
 import {
     graphql,
@@ -10,7 +10,8 @@ import {
 const PartnerListEntry = createFragmentContainer(
     ({ data }) => (
        <div>
-           {data.firstname} {data.lastname} {data.myClaims.map(claim => claim.claimsSum).reduce(function(a, b) { return a + b}, 0)}
+
+           {data.firstname} {data.lastname} {currencyFormatter.format(data.myClaims.map(claim => claim.claimsSum).reduce(function(a, b) { return a + b}, 0), { code: 'CHF' })}
        </div>
     ),
     graphql`

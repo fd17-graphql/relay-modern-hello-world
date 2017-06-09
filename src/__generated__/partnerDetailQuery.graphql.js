@@ -3,11 +3,13 @@
  *   relay-compiler
  *
  * @providesModule partnerDetailQuery.graphql
- * @generated SignedSource<<539781c90856f5f858bdb0feacfaf6ca>>
- * @relayHash bf8c4241609da66e8dfafe6b3c4e51a1
+ * @generated SignedSource<<94de0613467f6b29d391285f7b6d3027>>
+ * @relayHash 8616a31555c1a4a146014598205c8e73
  * @flow
  * @nogrep
  */
+
+/* eslint-disable */
 
 'use strict';
 
@@ -16,13 +18,12 @@ import type {ConcreteBatch} from 'relay-runtime';
 
 */
 
-/* eslint-disable comma-dangle, quotes */
 
 /*
 query partnerDetailQuery(
   $partnerNumber: Int!
 ) {
-  partners(partnerNumber: $partnerNumber) {
+  partner(partnerNumber: $partnerNumber) {
     partnerNumber
     firstname
     lastname
@@ -54,12 +55,12 @@ const batch /*: ConcreteBatch*/ = {
             "kind": "Variable",
             "name": "partnerNumber",
             "variableName": "partnerNumber",
-            "type": "Int"
+            "type": "Int!"
           }
         ],
         "concreteType": "Partner",
-        "name": "partners",
-        "plural": true,
+        "name": "partner",
+        "plural": false,
         "selections": [
           {
             "kind": "ScalarField",
@@ -127,12 +128,12 @@ const batch /*: ConcreteBatch*/ = {
             "kind": "Variable",
             "name": "partnerNumber",
             "variableName": "partnerNumber",
-            "type": "Int"
+            "type": "Int!"
           }
         ],
         "concreteType": "Partner",
-        "name": "partners",
-        "plural": true,
+        "name": "partner",
+        "plural": false,
         "selections": [
           {
             "kind": "ScalarField",
@@ -174,7 +175,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query partnerDetailQuery(\n  $partnerNumber: Int!\n) {\n  partners(partnerNumber: $partnerNumber) {\n    partnerNumber\n    firstname\n    lastname\n    birthday\n    sex\n  }\n}\n"
+  "text": "query partnerDetailQuery(\n  $partnerNumber: Int!\n) {\n  partner(partnerNumber: $partnerNumber) {\n    partnerNumber\n    firstname\n    lastname\n    birthday\n    sex\n  }\n}\n"
 };
 
 module.exports = batch;

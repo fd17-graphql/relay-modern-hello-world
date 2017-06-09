@@ -3,28 +3,27 @@
  *   relay-compiler
  *
  * @providesModule partnerListEntry.graphql
- * @generated SignedSource<<01c508c0cb68c8c34a1892691f31af09>>
+ * @generated SignedSource<<407dabcffecfb9d8ab19c5bd3e963190>>
  * @flow
  * @nogrep
  */
+
+/* eslint-disable */
 
 'use strict';
 
 /*::
 import type {ConcreteFragment} from 'relay-runtime';
-export type partnerListEntry = {
-  partnerNumber?: ?number;
-  firstname: string;
-  lastname: string;
-  myClaims?: ?Array<?partnerListEntry_myClaims>;
-};
-
-export type partnerListEntry_myClaims = {
-  claimsSum: number;
-};
+export type partnerListEntry = {|
+  +partnerNumber: ?number;
+  +firstname: string;
+  +lastname: string;
+  +myClaims: ?$ReadOnlyArray<?{|
+    +claimsSum: number;
+  |}>;
+|};
 */
 
-/* eslint-disable comma-dangle, quotes */
 
 const fragment /*: ConcreteFragment*/ = {
   "argumentDefinitions": [],
