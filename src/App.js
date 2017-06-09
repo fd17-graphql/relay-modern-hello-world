@@ -30,7 +30,7 @@ class App extends Component {
       if (typeof this.props.match !== 'undefined' && typeof this.props.match.params.id !== 'undefined'){
           console.log("match", this.props.match.params.id);
           //TODO: das ist nicht wirklich gut und mit setState kommt es zu schlimmeren Fehlern
-         // this.state.partnerNumber = this.props.match.params.id;
+         this.state.partnerNumber = this.props.match.params.id;
       }
     return (
       <div className="App container">
