@@ -42,11 +42,8 @@ class PartnerDetail extends React.Component {
           return <div>
               <h4>{props.partner.firstname} {props.partner.lastname} ({props.partner.sex}, {props.partner.birthday})</h4>
 
-              <h5>Schadensliste</h5>
-              <PartnerDetailMyClaimsList data={props.partner.myClaims}/>
-
-              <h5>Meine Schadensliste</h5>
-              <PartnerDetailMyClaimsList data={props.partner.claimsCausedByMe}/>
+              <PartnerDetailMyClaimsList data={props.partner.myClaims} title="Schäden"/>
+              <PartnerDetailMyClaimsList data={props.partner.claimsCausedByMe} title="Verursachte Schäden"/>
           </div>;
         }
         return <div>Loading</div>;
