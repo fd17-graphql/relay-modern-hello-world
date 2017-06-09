@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 import {createFragmentContainer, graphql} from "react-relay";
 
 import currencyFormatter from 'currency-formatter';
@@ -12,7 +12,7 @@ const PartnerDetailMyClaimsListEntry = createFragmentContainer(
             <td>{currencyFormatter.format(data.claimsSum, { code: 'CHF' })}</td>
             <td>{data.claimsDate}</td>
             <td>{data.state}</td>
-            <td onClick={() => onClick(data.causer.partnerNumber)}><a href="#"> {data.causer.firstname} {data.causer.lastname} {data.causer.partnerNumber}</a></td>
+            <td onClick={() => onClick(data.causer.partnerNumber)}><Link to={"/" + data.causer.partnerNumber}> {data.causer.firstname} {data.causer.lastname} {data.causer.partnerNumber}</Link></td>
         </tr>
     ),
     graphql`

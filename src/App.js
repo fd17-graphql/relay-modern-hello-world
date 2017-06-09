@@ -4,6 +4,8 @@ import PartnerList from './partnerList';
 import PartnerDetail from './partnerDetail';
 import NameForm from './NameForm';
 
+import {BrowserRouter, Route, Link} from "react-router-dom";
+
 class App extends Component {
   constructor() {
     super();
@@ -26,7 +28,11 @@ class App extends Component {
         })
     }
 
-  render() {
+  render(match) {
+      if (typeof this.props.match != 'undefined' && typeof this.props.match.params != 'undefined'){
+          console.log("match", this.props.match.params.id);
+          this.state.partnerNumber = this.props.match.params.id;
+      }
     return (
       <div className="App container">
         <div className="row">

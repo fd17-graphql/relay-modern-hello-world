@@ -5,14 +5,14 @@ import {
     graphql,
     createFragmentContainer
 } from 'react-relay';
-
+import {Link} from "react-router-dom";
 
 const PartnerListEntry = createFragmentContainer(
     ({ data, selectedPartnerNumber, onClick }) => (
       <tr className={data.partnerNumber === selectedPartnerNumber ? 'selected' : ''}
           onClick={() => {onClick(data.partnerNumber)}}>
-          <td><a href="#">  {data.firstname} </a></td>
-        <td><a href="#">{data.lastname}</a></td>
+          <td><Link to={"/" + data.partnerNumber}>  {data.firstname} </Link></td>
+        <td><Link to={"/" + data.partnerNumber}>{data.lastname}</Link></td>
         <td>{data.birthday}</td>
         <td>{currencyFormatter.format(data.myClaims.map(claim => claim.claimsSum).reduce(function(a, b) { return a + b}, 0), { code: 'CHF' })}</td>
       </tr>

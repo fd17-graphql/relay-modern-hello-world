@@ -9,6 +9,7 @@ import {
 import PartnerDetailMyClaimsList from './partnerDetailMyClaimsList'
 
 class PartnerDetail extends React.Component {
+  
   render() {
     console.log("partnerNumber", this.props.partnerNumber);
     if(this.props.partnerNumber == null){
