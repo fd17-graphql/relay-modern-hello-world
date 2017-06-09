@@ -1,30 +1,47 @@
 import React from 'react';
-
+import environment from './createRelayEnvironment';
 import {
-    graphql,
-    createFragmentContainer
+  graphql,
+  QueryRenderer
 } from 'react-relay';
 
 import PartnerListEntry from './partnerListEntry';
 
-const PartnerList = createFragmentContainer(
-    ({ data, onClick}) => (
-        <ol>
-            {data.map( (partner, index) => (
-                <li key={partner.partnerNumber} onClick={()=>{onClick(index)}}>
-                    <PartnerListEntry data={partner} />
+class PartnerList extends React.Component {
+  render() {
+    return <QueryRenderer
+      environment={environment}
+
+      query={graphql`
+              query partnerListQuery{
+                partners {
+                  partnerNumber
+                  ...partnerListEntry
+                 }
+              }
+            `}
+
+      render={({error, props}) => {
+        if (error) {
+          return <div>{error.message}</div>;
+        } else if (props) {
+          console.log(props.partners);
+          return <div>
+            <ol>
+              {props.partners.map((partner, index) => (
+                <li key={partner.partnerNumber} onClick={() => {
+                  this.props.onClick(partner.partnerNumber)
+                }}>
+                  <PartnerListEntry data={partner}/>
                 </li>
-            ))}
-        </ol>
-    ),
-    graphql`
-    fragment partnerList on Partner @relay(plural: true) {
-        partnerNumber
-        firstname
-        ...partnerListEntry
-    }
-     
-  `
-)
+              ))}
+            </ol>
+          </div>;
+        }
+        return <div>Loading</div>;
+      }}
+    />
+  }
+}
 
 export default PartnerList;

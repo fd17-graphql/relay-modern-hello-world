@@ -3,7 +3,7 @@
  *   relay-compiler
  *
  * @providesModule partnerListEntry.graphql
- * @generated SignedSource<<20c17feea88df95d0bb459c6aaccffe8>>
+ * @generated SignedSource<<03331020390de1aace312304890e4b1f>>
  * @flow
  * @nogrep
  */
@@ -13,7 +13,7 @@
 /*::
 import type {ConcreteFragment} from 'relay-runtime';
 export type partnerListEntry = {
-  partnerNumber: string;
+  partnerNumber?: ?number;
   firstname: string;
   lastname: string;
 };
