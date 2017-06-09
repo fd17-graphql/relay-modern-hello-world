@@ -10,7 +10,6 @@ import {
 const PartnerListEntry = createFragmentContainer(
     ({ data }) => (
        <div>
-
            {data.firstname} {data.lastname} {currencyFormatter.format(data.myClaims.map(claim => claim.claimsSum).reduce(function(a, b) { return a + b}, 0), { code: 'CHF' })}
        </div>
     ),

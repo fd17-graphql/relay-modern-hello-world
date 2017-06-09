@@ -6,6 +6,8 @@ import {
   QueryRenderer
 } from 'react-relay';
 
+import PartnerDetailMyClaimsList from './partnerDetailMyClaimsList'
+
 class PartnerDetail extends React.Component {
   render() {
     console.log("partnerNumber", this.props.partnerNumber);
@@ -23,6 +25,7 @@ class PartnerDetail extends React.Component {
                   lastname
                   birthday
                   sex
+                  ...partnerDetailMyClaimsList
                 }
               }
             `}
@@ -31,9 +34,9 @@ class PartnerDetail extends React.Component {
         if (error) {
           return <div>{error.message}</div>;
         } else if (props) {
-          console.log(props.partner);
           return <div>
             {props.partner.firstname} {props.partner.lastname} {props.partner.birthday}
+            <PartnerDetailMyClaimsList data={props.partner}/>
           </div>;
         }
         return <div>Loading</div>;

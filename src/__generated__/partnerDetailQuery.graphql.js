@@ -3,8 +3,8 @@
  *   relay-compiler
  *
  * @providesModule partnerDetailQuery.graphql
- * @generated SignedSource<<94de0613467f6b29d391285f7b6d3027>>
- * @relayHash 8616a31555c1a4a146014598205c8e73
+ * @generated SignedSource<<1ab99b19c5ef7ca7e775163c98bdeeaa>>
+ * @relayHash 6966443a27ccd131a138737c663c3347
  * @flow
  * @nogrep
  */
@@ -29,7 +29,24 @@ query partnerDetailQuery(
     lastname
     birthday
     sex
+    ...partnerDetailMyClaimsList
   }
+}
+
+fragment partnerDetailMyClaimsList on Partner {
+  partnerNumber
+  myClaims {
+    claimsNumber
+    ...partnerDetailMyClaimsListEntry
+  }
+}
+
+fragment partnerDetailMyClaimsListEntry on Claims {
+  claimsNumber
+  description
+  claimsSum
+  claimsDate
+  state
 }
 */
 
@@ -96,6 +113,11 @@ const batch /*: ConcreteBatch*/ = {
             "args": null,
             "name": "sex",
             "storageKey": null
+          },
+          {
+            "kind": "FragmentSpread",
+            "name": "partnerDetailMyClaimsList",
+            "args": null
           }
         ],
         "storageKey": null
@@ -169,13 +191,65 @@ const batch /*: ConcreteBatch*/ = {
             "args": null,
             "name": "sex",
             "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "args": null,
+            "concreteType": "Claims",
+            "name": "myClaims",
+            "plural": true,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "claimsNumber",
+                "storageKey": null
+              },
+              {
+                "kind": "InlineFragment",
+                "type": "Claims",
+                "selections": [
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "description",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "claimsSum",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "claimsDate",
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "state",
+                    "storageKey": null
+                  }
+                ]
+              }
+            ],
+            "storageKey": null
           }
         ],
         "storageKey": null
       }
     ]
   },
-  "text": "query partnerDetailQuery(\n  $partnerNumber: Int!\n) {\n  partner(partnerNumber: $partnerNumber) {\n    partnerNumber\n    firstname\n    lastname\n    birthday\n    sex\n  }\n}\n"
+  "text": "query partnerDetailQuery(\n  $partnerNumber: Int!\n) {\n  partner(partnerNumber: $partnerNumber) {\n    partnerNumber\n    firstname\n    lastname\n    birthday\n    sex\n    ...partnerDetailMyClaimsList\n  }\n}\n\nfragment partnerDetailMyClaimsList on Partner {\n  partnerNumber\n  myClaims {\n    claimsNumber\n    ...partnerDetailMyClaimsListEntry\n  }\n}\n\nfragment partnerDetailMyClaimsListEntry on Claims {\n  claimsNumber\n  description\n  claimsSum\n  claimsDate\n  state\n}\n"
 };
 
 module.exports = batch;
