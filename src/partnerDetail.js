@@ -11,10 +11,10 @@ import PartnerDetailMyClaimsList from './partnerDetailMyClaimsList'
 class PartnerDetail extends React.Component {
   
   render() {
-    console.log("partnerNumber", this.props.partnerNumber);
     if(this.props.partnerNumber == null){
       return <div></div>
     }
+      console.log("partnerNumber", this.props.partnerNumber);
     return <QueryRenderer
       environment={environment}
       variables={{partnerNumber: this.props.partnerNumber}}

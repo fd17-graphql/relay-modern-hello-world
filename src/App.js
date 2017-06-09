@@ -4,8 +4,6 @@ import PartnerList from './partnerList';
 import PartnerDetail from './partnerDetail';
 import NameForm from './NameForm';
 
-import {BrowserRouter, Route, Link} from "react-router-dom";
-
 class App extends Component {
   constructor() {
     super();
@@ -29,9 +27,10 @@ class App extends Component {
     }
 
   render(match) {
-      if (typeof this.props.match != 'undefined' && typeof this.props.match.params != 'undefined'){
+      if (typeof this.props.match !== 'undefined' && typeof this.props.match.params.id !== 'undefined'){
           console.log("match", this.props.match.params.id);
-          this.state.partnerNumber = this.props.match.params.id;
+          //TODO: das ist nicht wirklich gut und mit setState kommt es zu schlimmeren Fehlern
+         // this.state.partnerNumber = this.props.match.params.id;
       }
     return (
       <div className="App container">
