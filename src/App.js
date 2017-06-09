@@ -29,10 +29,14 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-        <h4>List of Partners</h4>
+        <div className="row">
+          <h4>List of Partners</h4>
+        </div>
+        <div className="row">
           <NameForm setClaims={this.setClaimGreaterThan.bind(this)} />
-          <PartnerList onClick={this.setPartner.bind(this)} claims={this.state.claimGreaterThan} selectedPartnerNumber={this.state.partnerNumber} />
-          <PartnerDetail partnerNumber={this.state.partnerNumber} />
+        </div>
+        <PartnerList onClick={this.setPartner.bind(this)} claims={this.state.claimGreaterThan} selectedPartnerNumber={this.state.partnerNumber} />
+        <PartnerDetail partnerNumber={this.state.partnerNumber} />
       </div>
     ); // render
   }

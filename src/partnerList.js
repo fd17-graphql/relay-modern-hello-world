@@ -27,7 +27,7 @@ class PartnerList extends React.Component {
         } else if (props) {
           return <div className="row">
               <div className="col-xs-12">
-                <table className="table table-striped">
+                <table className="table table-striped fixed">
                   <thead>
                     <tr>
                       <th>First Name</th>
