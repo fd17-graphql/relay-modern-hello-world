@@ -23,7 +23,7 @@ class PartnerDetail extends React.Component {
                   partnerNumber
                   firstname
                   lastname
-                  birthday
+                  birthday                                                                          
                   sex
                   ...partnerDetailMyClaimsList
                 }
@@ -35,8 +35,13 @@ class PartnerDetail extends React.Component {
           return <div>{error.message}</div>;
         } else if (props) {
           return <div>
-            {props.partner.firstname} {props.partner.lastname} {props.partner.birthday}
-            <PartnerDetailMyClaimsList data={props.partner}/>
+              <h2>PartnerDetails</h2>
+              <h3>Stammdaten</h3>
+                Vorname: {props.partner.firstname} <br/>
+                Nachname: {props.partner.lastname}<br/>
+                Geburtsdatum: {props.partner.birthday}<br/>
+              <h3>Schadensliste</h3>
+              <PartnerDetailMyClaimsList data={props.partner}/>
           </div>;
         }
         return <div>Loading</div>;
