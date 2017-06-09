@@ -3,11 +3,13 @@
  *   relay-compiler
  *
  * @providesModule partnerListQuery.graphql
- * @generated SignedSource<<4598d249a6ef1895013bdfd0a2fbbba3>>
+ * @generated SignedSource<<5e299a16029b843db92fe5a9f7f24706>>
  * @relayHash 65457cb44cec31dabc28adc70ec84f34
  * @flow
  * @nogrep
  */
+
+/* eslint-disable */
 
 'use strict';
 
@@ -16,7 +18,6 @@ import type {ConcreteBatch} from 'relay-runtime';
 
 */
 
-/* eslint-disable comma-dangle, quotes */
 
 /*
 query partnerListQuery {

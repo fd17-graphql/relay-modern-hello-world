@@ -25,7 +25,6 @@ class PartnerList extends React.Component {
         if (error) {
           return <div>{error.message}</div>;
         } else if (props) {
-          console.log(props.partners);
           return <ol>
               {props.partners.map((partner, index) => (
                 <li key={partner.partnerNumber} onClick={() => {

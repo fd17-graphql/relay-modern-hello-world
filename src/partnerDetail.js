@@ -6,6 +6,8 @@ import {
   QueryRenderer
 } from 'react-relay';
 
+import PartnerDetailMyClaimsList from './partnerDetailMyClaimsList'
+
 class PartnerDetail extends React.Component {
   render() {
     console.log("partnerNumber", this.props.partnerNumber);
@@ -17,12 +19,13 @@ class PartnerDetail extends React.Component {
       variables={{partnerNumber: this.props.partnerNumber}}
       query={graphql`
               query partnerDetailQuery($partnerNumber: Int!){
-                partners(partnerNumber: $partnerNumber) {
+                partner(partnerNumber: $partnerNumber) {
                   partnerNumber
                   firstname
                   lastname
                   birthday
                   sex
+                  ...partnerDetailMyClaimsList
                 }
               }
             `}
@@ -31,9 +34,9 @@ class PartnerDetail extends React.Component {
         if (error) {
           return <div>{error.message}</div>;
         } else if (props) {
-          console.log(props.partners[0]);
           return <div>
-            {props.partners[0].firstname} {props.partners[0].lastname} {props.partners[0].birthday}
+            {props.partner.firstname} {props.partner.lastname} {props.partner.birthday}
+            <PartnerDetailMyClaimsList data={props.partner}/>
           </div>;
         }
         return <div>Loading</div>;

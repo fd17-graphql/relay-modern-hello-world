@@ -31,7 +31,12 @@ This is the schema. We need this file to be passed into the `relay-compiler`.
 ### [scripts/getSchema.js](scripts/getSchema.js)
 
 This is a simple script I wrote up to introspect a remote server and save the schema in `.graphql` format.
+```js
+#start node console
+node
+result = require('./scripts/getSchema.js')
 
+```
 ### [package.json](package.json)
 
 Here we have added some scripts for the build process:
