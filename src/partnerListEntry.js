@@ -11,8 +11,9 @@ const PartnerListEntry = createFragmentContainer(
     ({ data, selectedPartnerNumber, onClick }) => (
       <tr className={data.partnerNumber === selectedPartnerNumber ? 'selected' : ''}
           onClick={() => {onClick(data.partnerNumber)}}>
-        <td>{data.firstname}</td>
-        <td>{data.lastname}</td>
+          <td><a href="#">  {data.firstname} </a></td>
+        <td><a href="#">{data.lastname}</a></td>
+        <td>{data.birthday}</td>
         <td>{currencyFormatter.format(data.myClaims.map(claim => claim.claimsSum).reduce(function(a, b) { return a + b}, 0), { code: 'CHF' })}</td>
       </tr>
     ),
@@ -21,6 +22,7 @@ const PartnerListEntry = createFragmentContainer(
             partnerNumber
             firstname
             lastname
+            birthday
             myClaims {
               claimsSum
             }

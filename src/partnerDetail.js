@@ -46,11 +46,11 @@ class PartnerDetail extends React.Component {
               <PartnerDetailMyClaimsList
                   data={props.partner.myClaims}
                   onClick={this.props.onClick}
-                  title="Schäden"/>
+                  title="Claims"/>
               <PartnerDetailMyClaimsList
                   data={props.partner.claimsCausedByMe}
                   onClick={this.props.onClick}
-                  title="Verursachte Schäden"/>
+                  title="Caused claims"/>
           </div>;
         }
         return <div>Loading</div>;

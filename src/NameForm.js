@@ -27,7 +27,7 @@ class NameForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>
-                    mind. Schadenssumme:
+                    min. claims sum:
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
             </form>

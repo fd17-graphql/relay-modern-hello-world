@@ -3,8 +3,8 @@
  *   relay-compiler
  *
  * @providesModule partnerListQuery.graphql
- * @generated SignedSource<<548ef45ff84384bc551b841b99ca9089>>
- * @relayHash f9ecaed50e6867c6da53efdd8741add0
+ * @generated SignedSource<<0a4102c7702d0358c77cb25a3e2607c8>>
+ * @relayHash 300a36b53c56730ded8cfbf38cb89fbb
  * @flow
  * @nogrep
  */
@@ -33,6 +33,7 @@ fragment partnerListEntry on Partner {
   partnerNumber
   firstname
   lastname
+  birthday
   myClaims {
     claimsSum
   }
@@ -144,6 +145,13 @@ const batch /*: ConcreteBatch*/ = {
                 "storageKey": null
               },
               {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "birthday",
+                "storageKey": null
+              },
+              {
                 "kind": "LinkedField",
                 "alias": null,
                 "args": null,
@@ -168,7 +176,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query partnerListQuery(\n  $claimGreaterThan: Int!\n) {\n  partnerWithClaimGreaterThan(value: $claimGreaterThan) {\n    partnerNumber\n    ...partnerListEntry\n  }\n}\n\nfragment partnerListEntry on Partner {\n  partnerNumber\n  firstname\n  lastname\n  myClaims {\n    claimsSum\n  }\n}\n"
+  "text": "query partnerListQuery(\n  $claimGreaterThan: Int!\n) {\n  partnerWithClaimGreaterThan(value: $claimGreaterThan) {\n    partnerNumber\n    ...partnerListEntry\n  }\n}\n\nfragment partnerListEntry on Partner {\n  partnerNumber\n  firstname\n  lastname\n  birthday\n  myClaims {\n    claimsSum\n  }\n}\n"
 };
 
 module.exports = batch;

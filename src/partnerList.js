@@ -32,6 +32,7 @@ class PartnerList extends React.Component {
                     <tr>
                       <th>First Name</th>
                       <th>Last Name</th>
+                      <th>Birtday</th>
                       <th>Claims Sum</th>
                     </tr>
                   </thead>

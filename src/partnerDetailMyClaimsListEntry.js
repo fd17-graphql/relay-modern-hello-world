@@ -12,7 +12,7 @@ const PartnerDetailMyClaimsListEntry = createFragmentContainer(
             <td>{currencyFormatter.format(data.claimsSum, { code: 'CHF' })}</td>
             <td>{data.claimsDate}</td>
             <td>{data.state}</td>
-            <td onClick={() => onClick(data.causer.partnerNumber)}>{data.causer.firstname} {data.causer.lastname} {data.causer.partnerNumber}</td>
+            <td onClick={() => onClick(data.causer.partnerNumber)}><a href="#"> {data.causer.firstname} {data.causer.lastname} {data.causer.partnerNumber}</a></td>
         </tr>
     ),
     graphql`
