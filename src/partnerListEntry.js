@@ -10,7 +10,7 @@ import {
 const PartnerListEntry = createFragmentContainer(
     ({ data }) => (
        <div>
-           {data.firstname} {data.lastname}
+           {data.firstname} {data.lastname} {data.myClaims.map(claim => claim.claimsSum).reduce(function(a, b) { return a + b}, 0)}
        </div>
     ),
     graphql`
@@ -18,6 +18,9 @@ const PartnerListEntry = createFragmentContainer(
             partnerNumber
             firstname
             lastname
+            myClaims {
+              claimsSum
+            }
     }
   `
 )

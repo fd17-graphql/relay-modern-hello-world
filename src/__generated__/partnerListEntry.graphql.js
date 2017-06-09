@@ -3,7 +3,7 @@
  *   relay-compiler
  *
  * @providesModule partnerListEntry.graphql
- * @generated SignedSource<<03331020390de1aace312304890e4b1f>>
+ * @generated SignedSource<<01c508c0cb68c8c34a1892691f31af09>>
  * @flow
  * @nogrep
  */
@@ -16,6 +16,11 @@ export type partnerListEntry = {
   partnerNumber?: ?number;
   firstname: string;
   lastname: string;
+  myClaims?: ?Array<?partnerListEntry_myClaims>;
+};
+
+export type partnerListEntry_myClaims = {
+  claimsSum: number;
 };
 */
 
@@ -46,6 +51,24 @@ const fragment /*: ConcreteFragment*/ = {
       "alias": null,
       "args": null,
       "name": "lastname",
+      "storageKey": null
+    },
+    {
+      "kind": "LinkedField",
+      "alias": null,
+      "args": null,
+      "concreteType": "Claims",
+      "name": "myClaims",
+      "plural": true,
+      "selections": [
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "args": null,
+          "name": "claimsSum",
+          "storageKey": null
+        }
+      ],
       "storageKey": null
     }
   ],

@@ -17,7 +17,7 @@ class PartnerDetail extends React.Component {
       environment={environment}
       variables={{partnerNumber: this.props.partnerNumber}}
       query={graphql`
-              query partnerDetailQuery($partnerNumber: Int){
+              query partnerDetailQuery($partnerNumber: Int!){
                 partners(partnerNumber: $partnerNumber) {
                   partnerNumber
                   firstname

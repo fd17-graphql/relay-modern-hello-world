@@ -3,8 +3,8 @@
  *   relay-compiler
  *
  * @providesModule partnerDetailQuery.graphql
- * @generated SignedSource<<126e6915532228f46324272941125b5c>>
- * @relayHash 675ba98d6ea9dcf0aad635877adde26b
+ * @generated SignedSource<<539781c90856f5f858bdb0feacfaf6ca>>
+ * @relayHash bf8c4241609da66e8dfafe6b3c4e51a1
  * @flow
  * @nogrep
  */
@@ -20,7 +20,7 @@ import type {ConcreteBatch} from 'relay-runtime';
 
 /*
 query partnerDetailQuery(
-  $partnerNumber: Int
+  $partnerNumber: Int!
 ) {
   partners(partnerNumber: $partnerNumber) {
     partnerNumber
@@ -38,7 +38,7 @@ const batch /*: ConcreteBatch*/ = {
       {
         "kind": "LocalArgument",
         "name": "partnerNumber",
-        "type": "Int",
+        "type": "Int!",
         "defaultValue": null
       }
     ],
@@ -111,7 +111,7 @@ const batch /*: ConcreteBatch*/ = {
       {
         "kind": "LocalArgument",
         "name": "partnerNumber",
-        "type": "Int",
+        "type": "Int!",
         "defaultValue": null
       }
     ],
@@ -174,7 +174,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query partnerDetailQuery(\n  $partnerNumber: Int\n) {\n  partners(partnerNumber: $partnerNumber) {\n    partnerNumber\n    firstname\n    lastname\n    birthday\n    sex\n  }\n}\n"
+  "text": "query partnerDetailQuery(\n  $partnerNumber: Int!\n) {\n  partners(partnerNumber: $partnerNumber) {\n    partnerNumber\n    firstname\n    lastname\n    birthday\n    sex\n  }\n}\n"
 };
 
 module.exports = batch;
