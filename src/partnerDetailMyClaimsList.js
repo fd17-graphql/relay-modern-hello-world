@@ -4,13 +4,8 @@ import {createFragmentContainer, graphql} from "react-relay";
 import PartnerDetailMyClaimsListEntry from "./partnerDetailMyClaimsListEntry";
 
 
-/**
- *             {if (typeof data !== 'undefined' && data.length > 0){
-           return <div></div>
-        } }
- */
 const PartnerDetailMyClaimsList = createFragmentContainer(
-    ({data, title}) => (
+    ({data, title, onClick}) => (
         <div className="row">
             {(data.length > 0) ?
                 <div>
@@ -29,7 +24,11 @@ const PartnerDetailMyClaimsList = createFragmentContainer(
                             </thead>
                             <tbody>
                             {data.map(entry => (
-                                <PartnerDetailMyClaimsListEntry data={entry} key={entry.claimsNumber}/>
+                                <PartnerDetailMyClaimsListEntry
+                                    data={entry}
+                                    key={entry.claimsNumber}
+                                    onClick={onClick}
+                                />
                             ))}
                             </tbody>
                         </table>

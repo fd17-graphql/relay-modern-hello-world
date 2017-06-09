@@ -5,14 +5,14 @@ import {createFragmentContainer, graphql} from "react-relay";
 import currencyFormatter from 'currency-formatter';
 
 const PartnerDetailMyClaimsListEntry = createFragmentContainer(
-    ({data}) => (
+    ({data, onClick}) => (
         <tr>
             <td>{data.claimsNumber}</td>
             <td>{data.description}</td>
             <td>{currencyFormatter.format(data.claimsSum, { code: 'CHF' })}</td>
             <td>{data.claimsDate}</td>
             <td>{data.state}</td>
-            <td>{data.causer.firstname} {data.causer.lastname} {data.causer.partnerNumber}</td>
+            <td onClick={() => onClick(data.causer.partnerNumber)}>{data.causer.firstname} {data.causer.lastname} {data.causer.partnerNumber}</td>
         </tr>
     ),
     graphql`
@@ -20,7 +20,7 @@ const PartnerDetailMyClaimsListEntry = createFragmentContainer(
                         Claims {
                             claimsNumber
                             description
-                            claimsSum
+                            claimsSum                                       
                             claimsDate
                             state
                             causer {

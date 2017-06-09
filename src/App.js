@@ -32,7 +32,7 @@ class App extends Component {
         <h4>List of Partners</h4>
           <NameForm setClaims={this.setClaimGreaterThan.bind(this)} />
           <PartnerList onClick={this.setPartner.bind(this)} claims={this.state.claimGreaterThan} selectedPartnerNumber={this.state.partnerNumber} />
-          <PartnerDetail partnerNumber={this.state.partnerNumber} />
+          <PartnerDetail partnerNumber={this.state.partnerNumber} onClick={this.setPartner.bind(this)}  />
       </div>
     ); // render
   }
