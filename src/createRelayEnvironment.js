@@ -17,7 +17,7 @@ function fetchQuery(
   cacheConfig,
   uploadables,
 ) {
-  return fetch('https://d17-apollo-server-phil-schneider.c9users.io/graphql', {
+  return fetch('https://fd17-apollo-server-phil-schneider.c9users.io/graphql', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
