@@ -10,8 +10,10 @@ class App extends Component {
 
     this.state = {
       partnerNumber: null ,
-        claimGreaterThan: 1
+        claimGreaterThan: 1,
     }
+
+
   }
 
   setPartner(partnerNumber) {
